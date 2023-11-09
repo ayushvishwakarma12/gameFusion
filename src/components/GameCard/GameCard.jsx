@@ -22,22 +22,18 @@ export default function GameCard(props) {
           <h1 className="text-white m-0 text-left text-2xl font-roboto font-bold tracking-wider">
             {name}
           </h1>
-          <p>{rating}</p>
           <ul className="w-full">
             <li className="flex justify-between border-b-[0.5px] border-gray-500  border-opacity-40 pt-2 pb-3">
-              <p className="text-gray-400">release date</p>
-              <p className="text-white text-sm pr-2">2013</p>
+              <p className="text-gray-400 text-lg font-bold">release date : </p>
+              <p className="text-white text-sm pr-2">{released}</p>
             </li>
-            <li className="flex justify-between border-b-[1px]  border-gray-500 border-opacity-40 pt-3 pb-3">
-              <p className="text-gray-400">genres</p>
-              <ul className="text-sm pr-2">
+            <li className="flex justify-between pt-3 pb-3">
+              <p className="text-gray-400 font-bold text-lg">genres : </p>
+              <ul className="text-sm pr-2 flex">
                 {genres.map((eachGenre) => {
                   return (
-                    <li
-                      key={eachGenre.id}
-                      className="text-white w-full flex flex-wrap text-right text-sm"
-                    >
-                      {eachGenre.slug}
+                    <li key={eachGenre.id} className="text-white pl-2 text-sm">
+                      {eachGenre.slug},
                     </li>
                   );
                 })}

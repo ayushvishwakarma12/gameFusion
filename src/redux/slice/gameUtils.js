@@ -1,7 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { fetchAsynchGames, fetchAsynchGamesDetails } from "./gameUtils2";
-import { STATUS } from "../status";
-
+import { STATUS } from "../../utils/status";
 const initialState = {
   games: [],
   currentPage: 1,

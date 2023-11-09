@@ -6,7 +6,7 @@ const GameList = ({ games, sliceValue = games.length }) => {
   // by default we are going to display all the games fetched from api if not any slicevalue is mentioned
   return (
     <GameListWrapper>
-      <div className="card-list">
+      <div className="card-list bg-slate-950 pl-32 pr-32">
         {games?.slice(0, sliceValue).map((item) => (
           <GameCard key={item.id} gameData={item} />
         ))}
@@ -24,7 +24,6 @@ GameList.propTypes = {
 
 const GameListWrapper = styled.div`
   .card-list {
-    background-color: #006064;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto;

@@ -8,7 +8,7 @@ import {
   setSidebarOf,
   setSidebarOn,
   selectSidebarStatus,
-} from "../utils/slice/sidebarSLice";
+} from "../../redux/slice/sidebarSLice";
 
 // const Navbar = () => (
 //   <nav className="  bg-gradient-to-r bg-slate-900  min-h-[80px] dark:bg-gray-900 min-w-full">

@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useParams, redirect, useNavigate } from "react-router-dom";
-import { fetchAsynchGamesDetails } from "../utils/slice/gameUtils2";
-import { STATUS } from "../utils/status";
+import { fetchAsynchGamesDetails } from "../../redux/slice/gameUtils2";
+import { STATUS } from "../../utils/status";
 
 export default function GameDetails(props) {
   const dispatch = useDispatch();

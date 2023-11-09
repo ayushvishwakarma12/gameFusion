@@ -1,17 +1,16 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { background } from "../utils/images";
+import { background } from "../../utils/images";
 import ImageSlider from "./ImageSliderr";
-import { STATUS } from "../utils/status";
-import Title from "../components/Common/Title";
+import { STATUS } from "../../utils/status";
+import Title from "../Common/Title";
 import { useDispatch, useSelector } from "react-redux";
-import { selectAllGames } from "../utils/slice/gameUtils";
-import GameList from "../components/GameCard/GameList";
-import { fetchAsynchGames } from "../utils/slice/gameUtils2";
-import { join_image } from "../utils/images";
-import Tabs from "../components/Common/Tabs";
-import { fetchAsynchGenres } from "../utils/slice/genreUtils";
+import GameList from "../GameCard/GameList";
+import { fetchAsynchGames } from "../../redux/slice/gameUtils2";
+import { join_image } from "../../utils/images";
+import Tabs from "../Common/Tabs";
+import { fetchAsynchGenres } from "../../redux/slice/genreUtils";
 
 export default function Home() {
   const dispatch = useDispatch();
@@ -24,8 +23,11 @@ export default function Home() {
   const renderedPopularGames = (
     <>
       <GameList sliceValue={9} games={gamesList} />
-      <div className="d-flex justify-content-center">
-        <Link to="/game" className="section-btn">
+      <div className="d-flex justify-content-center  bg-transparent">
+        <Link
+          to="/game"
+          className="text-white bg-cyan-600 text-2xl p-2 pr-4 pl-4 font-semibold hover:text-white tracking-wider"
+        >
           see more games
         </Link>
       </div>
@@ -73,8 +75,8 @@ export default function Home() {
       </div>
       <ImageSlider />
 
-      <section className="section sc-popular">
-        <div className="container">
+      <section>
+        <div className="p-5 bg-slate-950">
           <Title
             titleName={{ firstText: "top popular", secondText: "games" }}
           />
@@ -111,8 +113,8 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section sc-genres">
-        <div className="container">
+      <section className="sc-genres">
+        <div className="">
           <Title
             titleName={{
               firstText: "top",
