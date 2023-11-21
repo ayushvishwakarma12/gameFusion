@@ -8,6 +8,10 @@ import slider_img_6 from "../assets/slider_img_6.jpg";
 import slider_img_7 from "../assets/slider_img_7.jpg";
 import join_image from "../assets/join_image.png";
 import store_image from "../assets/store_image.png";
+import banner from "../assets/banner.jpg";
+import banner2 from "../assets/banner2.jpg";
+import banner3 from "../assets/banner3.jpg";
+import banner4 from "../assets/banner3.jpg";
 
 const sliderImages = [
   slider_img_1,

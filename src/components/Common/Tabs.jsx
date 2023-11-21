@@ -7,6 +7,7 @@ import GenreItem from "../Genre/GenreItem";
 const Tabs = ({ data }) => {
   const [activeTab, setActiveTab] = useState(data[0]); // using first genre as the default tab
   const [tabButtonStatus, setTabButtonStatus] = useState(false);
+  console.log(data);
 
   const tabClickHandler = (id) => {
     data.map((item) => {
@@ -20,16 +21,20 @@ const Tabs = ({ data }) => {
     setTabButtonStatus((prevStatus) => !prevStatus);
 
   return (
-    <TabsWrapper className="bg-white">
+    <TabsWrapper className="bg-white pb-10">
       <div className="container">
         <div className="tabs-content">
-          <ul className={`tabs-buttons ${tabButtonStatus ? "show" : ""}`}>
+          <ul
+            className={`tabs-buttons opacity-90 hover:opacity-100 absolute rounded-tr-2xl rounded-br-2xl top-0 left-0 z-40 shadow-2xl pt-16 pb-16 shadow-slate-800 ${
+              tabButtonStatus ? "show" : ""
+            } bg-slate-800`}
+          >
             <button
               type="button"
               className="tabs-buttons-close bg-white d-flex align-items-center justify-content-center"
               onClick={tabButtonsHandler}
             >
-              <AiOutlineMenu size={22} />
+              <AiOutlineMenu size={30} />
             </button>
             {data.map((item) => {
               return (
@@ -51,8 +56,8 @@ const Tabs = ({ data }) => {
             })}
           </ul>
 
-          <div className="tabs-body">
-            <div className="card-list">
+          <div className="ml-auto xl:max-w-[1000px] md:pr-2 xl:pr-10 lg:min-h-[135vh] xl:min-h-[140vh] 2xl:min-h-[160vh] 2xl:max-w-[1100px] flex-wrap">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-h-[1200px] overflow-auto">
               {activeTab?.games?.map((item) => (
                 <>
                   <GenreItem key={item.id} gameItem={item} />
@@ -138,14 +143,14 @@ const TabsWrapper = styled.div`
     }
 
     &:hover:not(.tabs-active) {
-      background-color: rgba(0, 0, 0, 0.05);
+      background-color: #a4319e;
     }
   }
 
   .tabs-active {
-    background-color: var(--clr-pink-normal);
+    background-color: #e11d48;
     button {
-      color: var(--clr-white);
+      color: #ffffff;
     }
   }
 

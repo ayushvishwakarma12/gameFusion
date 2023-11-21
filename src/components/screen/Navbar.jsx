@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { HiOutlineMenuAlt3 } from "react-icons/hi";
+import { GiHamburgerMenu } from "react-icons/gi";
 import { BsRssFill, BsSteam, BsTwitch, BsYoutube } from "react-icons/bs";
 import { MdClose } from "react-icons/md";
 import { useDispatch, useSelector } from "react-redux";
@@ -99,91 +99,250 @@ const Navbar = () => {
   const sidebarStatus = useSelector(selectSidebarStatus);
 
   return (
-    <NavbarWrapper className="d-flex align-items-center">
-      <div className="container w-100">
-        <div className="navbar-content">
-          <div className="brand-and-toggler d-flex align-items-center justify-content-between">
-            <Link
-              to="/"
-              className="navbar-brand text-white text-uppercase no-wrap"
-            >
-              <span className="self-center text-xl md:text-4xl text-white font-bold mr-2">
-                Game
-              </span>
-              <span className="self-center text-xl md:text-4xl bg-gradient-to-r from-[#a4b7de] to-cyan-600 hover:bg-gradient-to-l delay-1000 trasition-all ease-in-out bg-clip-text text-transparent font-bold whitespace-nowrap dark:text-white">
-                Zone
-              </span>
-            </Link>
-            <button
-              type="button"
-              className="navbar-show-btn text-white"
-              onClick={() => dispatch(setSidebarOn())}
-            >
-              <HiOutlineMenuAlt3 size={25} />
-            </button>
-          </div>
+    //   <NavbarWrapper className="d-flex align-items-center">
+    //     <div className="container w-100">
+    //       <div className="navbar-content">
+    //         <div className="brand-and-toggler flex items-center justify-between w-full">
+    //           <Link
+    //             to="/"
+    //             className="navbar-brand text-white text-uppercase no-wrap"
+    //           >
+    //             <span className="self-center text-xl md:text-4xl text-white font-bold mr-2">
+    //               Game
+    //             </span>
+    //             <span className="self-center text-xl md:text-4xl bg-gradient-to-r from-[#a4b7de] to-cyan-600 hover:bg-gradient-to-l delay-1000 trasition-all ease-in-out bg-clip-text text-transparent font-bold whitespace-nowrap dark:text-white">
+    //               Zone
+    //             </span>
+    //           </Link>
+    //           <button
+    //             type="button"
+    //             className="navbar-show-btn text-white"
+    //             onClick={() => dispatch(setSidebarOn())}
+    //           >
+    //             <HiOutlineMenuAlt3 size={25} />
+    //           </button>
+    //         </div>
 
-          <div className={`navbar-collapse ${sidebarStatus ? "show" : " "}`}>
+    //         <div className={`navbar-collapse ${sidebarStatus ? "show" : " "}`}>
+    //           <button
+    //             type="button"
+    //             className="navbar-hide-btn"
+    //             onClick={() => dispatch(setSidebarOf())}
+    //           >
+    //             <MdClose size={25} />
+    //           </button>
+
+    //           <ul className="navbar-nav">
+    //             <li className="nav-item">
+    //               <Link to="/" className="nav-link">
+    //                 home
+    //               </Link>
+    //             </li>
+    //             <li className="nav-item">
+    //               <Link to="/creators" className="nav-link">
+    //                 creators
+    //               </Link>
+    //             </li>
+    //             <li className="nav-item">
+    //               <Link to="/stores" className="nav-link">
+    //                 stores
+    //               </Link>
+    //             </li>
+    //             <li className="nav-item">
+    //               <Link to="/games" className="nav-link">
+    //                 games
+    //               </Link>
+    //             </li>
+    //           </ul>
+
+    //           <ul className="connect-list d-flex justify-content-center align-items-center mt-5 flex-wrap">
+    //             <li className="text-uppercase fw-7 w-100 connect-text mb-2">
+    //               connect
+    //             </li>
+    //             <li className="connect-item">
+    //               <Link to="/" className="connect-link">
+    //                 <BsRssFill />
+    //               </Link>
+    //             </li>
+    //             <li className="connect-item">
+    //               <Link to="/" className="connect-link">
+    //                 <BsSteam size={18} />
+    //               </Link>
+    //             </li>
+    //             <li className="connect-item">
+    //               <Link to="/" className="connect-link">
+    //                 <BsTwitch size={18} />
+    //               </Link>
+    //             </li>
+    //             <li className="connect-item">
+    //               <Link to="/" className="connect-link">
+    //                 <BsYoutube size={19} />
+    //               </Link>
+    //             </li>
+    //           </ul>
+    //         </div>
+    //       </div>
+    //     </div>
+    //   </NavbarWrapper>
+    // );
+    <div className="w-full bg-slate-900 min-h-[78px] pl-5 pr-5 flex items-center justify-between">
+      <div>
+        <Link to="/" className="text-white text-uppercase">
+          <span className="text-xl md:text-4xl text-white font-bold mr-2">
+            Game
+          </span>
+          <span className="text-xl md:text-4xl bg-gradient-to-r from-[#a4b7de] to-cyan-600 hover:bg-gradient-to-l delay-1000 trasition-all ease-in-out bg-clip-text text-transparent font-bold whitespace-nowrap dark:text-white">
+            Zone
+          </span>
+        </Link>
+      </div>
+
+      <ul className="hidden md:flex">
+        <li className="hover:scale-110 ease-in-out transition-all duration-500">
+          <Link
+            to="/"
+            className="text-white hover:text-to-blue-600 font-poppins font-medium tracking-widest pr-2 xl:pr-5 text-base xl:text-lg"
+          >
+            Home
+          </Link>
+        </li>
+        <li className="hover:scale-110 ease-in-out transition-all duration-500">
+          <Link
+            to="/"
+            className="text-white hover:text-to-blue-600 font-poppins font-medium tracking-widest pr-2 xl:pr-5 text-base xl:text-lg"
+          >
+            Creators
+          </Link>
+        </li>
+        <li className="hover:scale-110 ease-in-out transition-all duration-500">
+          <Link
+            to="/"
+            className="text-white hover:text-to-blue-600 font-poppins font-medium tracking-widest pr-2 xl:pr-5 text-base xl:text-lg"
+          >
+            Store
+          </Link>
+        </li>
+        <li className="hover:scale-110 ease-in-out transition-all duration-500 pr-2 xl:pr-5">
+          <Link
+            to="/"
+            className="text-white hover:text-to-blue-600 font-poppins font-medium tracking-widest text-base xl:text-lg"
+          >
+            Games
+          </Link>
+        </li>
+      </ul>
+
+      <ul className="hidden md:flex justify-center items-center">
+        <li className="text-white font-poppins font-medium tracking-widest pr-5 text-lg">
+          connect
+        </li>
+        <li className="pr-4">
+          <Link to="/" className="text-white font-poppins hover:text-white">
+            <BsRssFill size={20} />
+          </Link>
+        </li>
+        <li className="pr-4">
+          <Link to="/" className="text-white font-poppins hover:text-white">
+            <BsSteam size={20} />
+          </Link>
+        </li>
+        <li className="pr-4">
+          <Link to="/" className="text-white font-poppins hover:text-white">
+            <BsTwitch size={20} />
+          </Link>
+        </li>
+        <li className="pr-4">
+          <Link to="/" className="text-white font-poppins hover:text-white">
+            <BsYoutube size={20} />
+          </Link>
+        </li>
+      </ul>
+
+      <div className="md:hidden">
+        <button
+          className="bg-transparent"
+          onClick={() => dispatch(setSidebarOn())}
+        >
+          <GiHamburgerMenu className="text-white" size={20} />
+        </button>
+        <div
+          className={`fixed bg-white w-64 right-0 top-0 h-full z-50 ${
+            sidebarStatus ? " " : "hidden"
+          }`}
+        >
+          <div className="text-end">
             <button
               type="button"
-              className="navbar-hide-btn"
+              className="text-slate-800 "
               onClick={() => dispatch(setSidebarOf())}
             >
-              <MdClose size={25} />
+              <MdClose size={25} className="ml-auto" />
             </button>
-
-            <ul className="navbar-nav">
-              <li className="nav-item">
-                <Link to="/" className="nav-link">
-                  home
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link to="/creators" className="nav-link">
-                  creators
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link to="/stores" className="nav-link">
-                  stores
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link to="/games" className="nav-link">
-                  games
-                </Link>
-              </li>
-            </ul>
-
-            <ul className="connect-list d-flex justify-content-center align-items-center mt-5 flex-wrap">
-              <li className="text-uppercase fw-7 w-100 connect-text mb-2">
-                connect
-              </li>
-              <li className="connect-item">
-                <Link to="/" className="connect-link">
-                  <BsRssFill />
-                </Link>
-              </li>
-              <li className="connect-item">
-                <Link to="/" className="connect-link">
-                  <BsSteam size={18} />
-                </Link>
-              </li>
-              <li className="connect-item">
-                <Link to="/" className="connect-link">
-                  <BsTwitch size={18} />
-                </Link>
-              </li>
-              <li className="connect-item">
-                <Link to="/" className="connect-link">
-                  <BsYoutube size={19} />
-                </Link>
-              </li>
-            </ul>
           </div>
+          <ul className="navbar-nav p-3">
+            <li className=" border-b-[1px] border-slate-500/20 p-2">
+              <Link
+                to="/"
+                className="text-slate-900 uppercase tracking-widest font-poppins"
+              >
+                home
+              </Link>
+            </li>
+            <li className=" border-b-[1px] border-slate-500/20 p-2 mt-5">
+              <Link
+                to="/creators"
+                className="text-slate-900 uppercase tracking-widest font-poppins"
+              >
+                creators
+              </Link>
+            </li>
+            <li className=" border-b-[1px] border-slate-500/20 p-2 mt-5">
+              <Link
+                to="/stores"
+                className="text-slate-900 uppercase tracking-widest font-poppins"
+              >
+                stores
+              </Link>
+            </li>
+            <li className=" border-b-[1px] border-slate-500/20 p-2 mt-5">
+              <Link
+                to="/games"
+                className="text-slate-900 uppercase tracking-widest font-poppins"
+              >
+                games
+              </Link>
+            </li>
+          </ul>
+          <ul className="flex flex-col justify-center mt-10">
+            <li className="uppercase w-100 font-poppins tracking-widest text-lg">
+              connect
+            </li>
+            <li className="flex items-center justify-center p-5">
+              <li className="connect-item pr-3">
+                <Link to="/" className="text-slate-900">
+                  <BsRssFill size={20} />
+                </Link>
+              </li>
+              <li className="connect-item pr-3">
+                <Link to="/" className="text-slate-900">
+                  <BsSteam size={20} />
+                </Link>
+              </li>
+              <li className="connect-item pr-3">
+                <Link to="/" className="text-slate-900">
+                  <BsTwitch size={20} />
+                </Link>
+              </li>
+              <li className="connect-item">
+                <Link to="/" className="text-slate-900">
+                  <BsYoutube size={20} />
+                </Link>
+              </li>
+            </li>
+          </ul>
         </div>
       </div>
-    </NavbarWrapper>
+    </div>
   );
 };
 

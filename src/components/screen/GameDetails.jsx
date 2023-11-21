@@ -32,6 +32,7 @@ export default function GameDetails(props) {
   useEffect(() => {
     console.log("id", id);
     dispatch(fetchAsynchGamesDetails(id));
+    window.scrollTo(0, 0);
   }, []);
   return (
     <div className="min-h-screen bg-[#1A1A1A]">

@@ -11,6 +11,7 @@ import { fetchAsynchGames } from "../../redux/slice/gameUtils2";
 import { join_image } from "../../utils/images";
 import Tabs from "../Common/Tabs";
 import { fetchAsynchGenres } from "../../redux/slice/genreUtils";
+import Banner from "./Banner";
 
 export default function Home() {
   const dispatch = useDispatch();
@@ -23,7 +24,7 @@ export default function Home() {
   const renderedPopularGames = (
     <>
       <GameList sliceValue={9} games={gamesList} />
-      <div className="d-flex justify-content-center  bg-transparent">
+      <div className="d-flex justify-content-center bg-transparent pt-5 pb-20">
         <Link
           to="/game"
           className="text-white bg-cyan-600 text-2xl p-2 pr-4 pl-4 font-semibold hover:text-white tracking-wider"
@@ -41,6 +42,7 @@ export default function Home() {
 
   return (
     <>
+      <Banner />
       <div
         className="min-h-screen hover:bg-gradient-to-r p-8 md:p-10 md:pl-20 text-left"
         style={{
@@ -73,6 +75,7 @@ export default function Home() {
           </Link>
         </div>
       </div>
+
       <ImageSlider />
 
       <section>
@@ -113,8 +116,8 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="sc-genres">
-        <div className="">
+      <section className="bg-slate-950">
+        <div className="bg-transparent">
           <Title
             titleName={{
               firstText: "top",
