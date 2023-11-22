@@ -12,6 +12,9 @@ import { join_image } from "../../utils/images";
 import Tabs from "../Common/Tabs";
 import { fetchAsynchGenres } from "../../redux/slice/genreUtils";
 import Banner from "./Banner";
+import Loading from "../Loader/Loader";
+import Lottie from "react-lottie";
+import BannerAnimation from "../../lotties/banner.json";
 
 export default function Home() {
   const dispatch = useDispatch();
@@ -20,6 +23,13 @@ export default function Home() {
   const genres = useSelector((state) => state.genre.genres.results);
   const { results } = games;
   const gamesList = results;
+
+  const lottieSettings = {
+    loop: true,
+    autoplay: true,
+    animationData: BannerAnimation,
+    animationSpeed: 6000,
+  };
 
   const renderedPopularGames = (
     <>
@@ -35,56 +45,17 @@ export default function Home() {
     </>
   );
 
-  useEffect(() => {
-    dispatch(fetchAsynchGames());
-    dispatch(fetchAsynchGenres());
-  }, []);
-
-  return (
-    <>
-      <Banner />
-      <div
-        className="min-h-screen hover:bg-gradient-to-r p-8 md:p-10 md:pl-20 text-left"
-        style={{
-          background: `linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9)), url(${background}) center/cover no-repeat`,
-        }}
-      >
-        <div className="mt-12 p-4 w-[300px] text-center hover:text-[28px] hover:transition-all hover:ease-in-out font-semibold text-2xl inline-block mb-6  bg-cyan-500 text-white cursor-pointer">
-          Join Streaming
-        </div>
-        <div className="flex justify-between">
-          <div className="mt-5">
-            <h1 className="font-[barlow] text-6xl tracking-widest text-white">
-              Welcome to GameZone
-            </h1>
-            <p className="font-mono text-lg font-semibold text-[#F2F3F5] mt-10 w-4/5 md:w-3/5 text-left">
-              - Your Gateway to Gaming Excellence! Dive into the immersive world
-              of gaming with us. Discover the latest games, read insightful
-              reviews, stay updated on gaming news, and connect with fellow
-              gamers. Whether you're a casual player or a hardcore enthusiast,
-              GameZone is your one-stop destination for all things gaming. Join
-              us on this epic journey and level up your gaming experience today!
-            </p>
-          </div>
-        </div>
-        <div className="text-left mt-16">
-          <Link to={"/game"}>
-            <button className=" bg-transparent border-[2px] border-cyan-700 w-[200px] p-5 text-white text-lg text-bold rounded-md cursor shadow-md transition ease-in-out delay-150 hover:translate-y-1 hover:scale-110 hover:bg-cyan-700 duration-300">
-              Find Games
-            </button>
-          </Link>
-        </div>
-      </div>
-
-      <ImageSlider />
-
+  const topPopularGame = () => {
+    return (
       <section>
         <div className="p-5 bg-slate-950">
           <Title
             titleName={{ firstText: "top popular", secondText: "games" }}
           />
           {gameStatus === STATUS.LOADING ? (
-            <h1>Loading...</h1>
+            <div className="bg-slate-950 min-h-[400px]">
+              <Loading />
+            </div>
           ) : gamesList?.length > 0 ? (
             <h1>{renderedPopularGames}</h1>
           ) : (
@@ -92,7 +63,48 @@ export default function Home() {
           )}
         </div>
       </section>
+    );
+  };
 
+  const joinStreaming = () => {
+    return (
+      <div
+        className="hover:bg-gradient-to-r p-8 md:p-10 text-left flex"
+        style={{
+          background: `linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9)), url(${background}) center/cover no-repeat`,
+        }}
+      >
+        <div>
+          <div className="flex justify-between">
+            <div className="mt-5 pt-[100px]">
+              <h1 className="font-poppins text-6xl tracking-widest text-white">
+                Join The Community
+              </h1>
+              <p className="font-mono text-lg font-semibold text-[#F2F3F5] mt-10 w-full text-left">
+                Level up your gaming experience with us! Dive into diverse
+                gaming channels, connect with a global community, and
+                participate in exclusive tournaments with epic prizes. Discuss
+                the latest gaming trends and gear.
+                <br />
+                Let's game together and create unforgettable moments! 🎮🌐
+              </p>
+            </div>
+          </div>
+          <div className="text-left mt-16">
+            <div className="bg-transparent border-[2px] cursor-pointer text-center border-cyan-700 w-[200px] p-5 text-white text-lg text-bold rounded-md cursor shadow-md transition ease-in-out delay-150 hover:translate-y-1 hover:scale-110 hover:bg-cyan-700 duration-300">
+              Join Streaming
+            </div>
+          </div>
+        </div>
+        <div className="brightness-75 hidden lg:block">
+          <Lottie options={lottieSettings} height={500} width={500} />
+        </div>
+      </div>
+    );
+  };
+
+  const joinTheCommunity = () => {
+    return (
       <section
         className="section sc-join d-flex align-items-center"
         style={{
@@ -115,9 +127,13 @@ export default function Home() {
           </div>
         </div>
       </section>
+    );
+  };
 
+  const topGenre = () => {
+    return (
       <section className="bg-slate-950">
-        <div className="bg-transparent">
+        <div className="bg-transparent pt-5">
           <Title
             titleName={{
               firstText: "top",
@@ -126,13 +142,31 @@ export default function Home() {
           />
         </div>
         {genresStatus === STATUS.LOADING ? (
-          <h1>Loding...</h1>
+          <div className="bg-slate-950 min-h-[400px]">
+            <Loading />
+          </div>
         ) : genres?.length > 0 ? (
           <Tabs sliceValue={9} data={genres} />
         ) : (
           "No genres found!"
         )}
       </section>
+    );
+  };
+
+  useEffect(() => {
+    dispatch(fetchAsynchGames());
+    dispatch(fetchAsynchGenres());
+  }, []);
+
+  return (
+    <>
+      <Banner />
+      {topPopularGame()}
+      {joinStreaming()}
+      {topGenre()}
+      <ImageSlider />
+      {joinTheCommunity()}
     </>
   );
 }

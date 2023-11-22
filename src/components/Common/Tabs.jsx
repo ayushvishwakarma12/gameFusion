@@ -57,7 +57,7 @@ const Tabs = ({ data }) => {
           </ul>
 
           <div className="ml-auto xl:max-w-[1000px] md:pr-2 xl:pr-10 lg:min-h-[135vh] xl:min-h-[140vh] 2xl:min-h-[160vh] 2xl:max-w-[1100px] flex-wrap">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-h-[1200px] overflow-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-h-[1200px] overflow-auto md:overflow-hidden">
               {activeTab?.games?.map((item) => (
                 <>
                   <GenreItem key={item.id} gameItem={item} />

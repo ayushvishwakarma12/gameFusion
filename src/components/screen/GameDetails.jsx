@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link, useParams, redirect, useNavigate } from "react-router-dom";
 import { fetchAsynchGamesDetails } from "../../redux/slice/gameUtils2";
 import { STATUS } from "../../utils/status";
+import Loading from "../Loader/Loader";
 
 export default function GameDetails(props) {
   const dispatch = useDispatch();
@@ -36,7 +37,7 @@ export default function GameDetails(props) {
   }, []);
   return (
     <div className="min-h-screen bg-[#1A1A1A]">
-      {gameStatus === STATUS.SUCCEEDED && (
+      {gameStatus === STATUS.SUCCEEDED ? (
         <>
           <div
             className="flex flex-col w-full min-h-[300px] md:min-h-[600px] max-h-[300px] md:max-h-[600px] bg-no-repeat bg-top p-5"
@@ -124,6 +125,10 @@ export default function GameDetails(props) {
             </ul>
           </div>
         </>
+      ) : (
+        <div className="bg-slate-950 flex justify-center items-center min-h-screen ">
+          <Loading />
+        </div>
       )}
     </div>
   );
