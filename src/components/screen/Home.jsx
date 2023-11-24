@@ -36,7 +36,7 @@ export default function Home() {
       <GameList sliceValue={9} games={gamesList} />
       <div className="d-flex justify-content-center bg-transparent pt-5 pb-20">
         <Link
-          to="/game"
+          to="/games"
           className="text-white bg-cyan-600 text-2xl p-2 pr-4 pl-4 font-semibold hover:text-white tracking-wider"
         >
           see more games
@@ -132,7 +132,7 @@ export default function Home() {
 
   const topGenre = () => {
     return (
-      <section className="bg-slate-950">
+      <section id="category" className="bg-slate-950">
         <div className="bg-transparent pt-5">
           <Title
             titleName={{

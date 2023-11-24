@@ -41,13 +41,13 @@ const ImageSlider = () => {
 
   return (
     <div className="bg-[#050415]">
-      <Slider {...settings} className="game-slider">
+      <Slider {...settings} className="min-h-[400px] outline-0">
         {sliderImages.map((image, idx) => (
           <div
-            className="slider-item h-[400px] p-4 outline-0 img-fit-cover"
+            className="border-[6px] border-white slider-item h-[400px] p-4 outline-0 img-fit-cover"
             key={idx}
           >
-            <img src={image} className="slider-item-img border-[6px]" />
+            <img src={image} className="w-[200px]" />
           </div>
         ))}
       </Slider>

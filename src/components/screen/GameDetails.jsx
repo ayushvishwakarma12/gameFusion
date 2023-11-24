@@ -11,8 +11,6 @@ export default function GameDetails(props) {
   const { id } = idObject;
   const gameDetails = useSelector((state) => state.games.gameSingle);
   const gameStatus = useSelector((state) => state.games.gameSingleStatus);
-  console.log(gameStatus);
-  const navigate = useNavigate();
 
   const {
     name,
@@ -40,9 +38,9 @@ export default function GameDetails(props) {
       {gameStatus === STATUS.SUCCEEDED ? (
         <>
           <div
-            className="flex flex-col w-full min-h-[300px] md:min-h-[600px] max-h-[300px] md:max-h-[600px] bg-no-repeat bg-top p-5"
+            className="flex flex-col w-full min-h-[400px] md:min-h-[600px] max-h-[300px] md:max-h-[600px] bg-no-repeat bg-top p-5"
             style={{
-              background: `linear-gradient(to left, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.9) ), url(${background_image})`,
+              background: `linear-gradient(to left, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.9) ), url(${background_image}) center/cover no-repeat`,
             }}
           >
             <div className=" self-center w-4/5">
@@ -92,8 +90,10 @@ export default function GameDetails(props) {
             </div>
           </div>
           <div className=" w-full text-center p-5 flex flex-col items-center">
-            <h1 className="font-bold text-[30px] text-white">About :</h1>
-            <p className="text-base md:text-lg text-white w-4/5 text-center">
+            <h1 className="font-bold text-[30px] text-white pb-5">
+              Game Description :
+            </h1>
+            <p className="text-base md:text-lg text-white  xl:w-4/5 text-center">
               {description_raw}
             </p>
             <div className=" text-center w-full flex flex-col items-center p-5">
@@ -106,7 +106,7 @@ export default function GameDetails(props) {
               />
             </div>
           </div>
-          <div className="">
+          {/* <div className="">
             <h1 className="font-bold text-[30px] text-white">
               Games like {name}
             </h1>
@@ -123,7 +123,7 @@ export default function GameDetails(props) {
                 );
               })}
             </ul>
-          </div>
+          </div> */}
         </>
       ) : (
         <div className="bg-slate-950 flex justify-center items-center min-h-screen ">

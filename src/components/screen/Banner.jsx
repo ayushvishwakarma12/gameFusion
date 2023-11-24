@@ -57,7 +57,7 @@ const Banner = () => {
                     level up your gaming experience today!
                   </p>
                   <div className="pt-10">
-                    <Link to={"/game"}>
+                    <Link to={"/games"}>
                       <button className=" bg-transparent border-[2px] border-cyan-700 w-[200px] p-5 text-white text-lg text-bold rounded-md cursor shadow-md transition ease-in-out delay-150 hover:translate-y-1 hover:scale-110 hover:bg-cyan-700 duration-300">
                         Find Games
                       </button>

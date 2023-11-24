@@ -5,6 +5,7 @@ import GameDetails from "../components/screen/GameDetails";
 
 import Navbar from "../components/screen/Navbar";
 import Footer from "../components/Common/Footer";
+import Creators from "../components/Creators/Creators";
 
 export default function AppRouter() {
   return (
@@ -12,8 +13,9 @@ export default function AppRouter() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/game" element={<FindGame />} />
+        <Route path="/games" element={<FindGame />} />
         <Route path="/game/:id" element={<GameDetails />} />
+        <Route path="/creators" element={<Creators />} />
       </Routes>
       <Footer />
     </BrowserRouter>

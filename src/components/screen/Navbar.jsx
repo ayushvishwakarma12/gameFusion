@@ -208,23 +208,16 @@ const Navbar = () => {
         </li>
         <li className="hover:scale-110 ease-in-out transition-all duration-500">
           <Link
-            to="/"
+            to="/creators"
             className="text-white hover:text-to-blue-600 font-poppins font-medium tracking-widest pr-2 xl:pr-5 text-base xl:text-lg"
           >
             Creators
           </Link>
         </li>
-        <li className="hover:scale-110 ease-in-out transition-all duration-500">
-          <Link
-            to="/"
-            className="text-white hover:text-to-blue-600 font-poppins font-medium tracking-widest pr-2 xl:pr-5 text-base xl:text-lg"
-          >
-            Store
-          </Link>
-        </li>
+
         <li className="hover:scale-110 ease-in-out transition-all duration-500 pr-2 xl:pr-5">
           <Link
-            to="/"
+            to="/games"
             className="text-white hover:text-to-blue-600 font-poppins font-medium tracking-widest text-base xl:text-lg"
           >
             Games
@@ -296,14 +289,7 @@ const Navbar = () => {
                 creators
               </Link>
             </li>
-            <li className=" border-b-[1px] border-slate-500/20 p-2 mt-5">
-              <Link
-                to="/stores"
-                className="text-slate-900 uppercase tracking-widest font-poppins"
-              >
-                stores
-              </Link>
-            </li>
+
             <li className=" border-b-[1px] border-slate-500/20 p-2 mt-5">
               <Link
                 to="/games"
