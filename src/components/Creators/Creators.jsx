@@ -20,8 +20,10 @@ const Creators = () => {
   };
 
   const onClickPrevPage = () => {
-    setCurrentPage(currentPage - 1);
-    window.scrollTo(0, 0);
+    if (currentPage > 1) {
+      setCurrentPage(currentPage - 1);
+      window.scrollTo(0, 0);
+    }
   };
 
   useEffect(() => {

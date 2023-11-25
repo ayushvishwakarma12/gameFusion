@@ -1,6 +1,4 @@
 import { Link } from "react-router-dom";
-import { AiOutlineSend } from "react-icons/ai";
-import styled from "styled-components";
 
 const Footer = () => {
   return (
