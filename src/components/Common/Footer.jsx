@@ -18,7 +18,7 @@ const Footer = () => {
               </span>
             </Link>
           </div>
-          <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
+          <div className="grid grid-cols-3 gap-8 sm:gap-6 sm:grid-cols-3">
             <div>
               <h2 className="mb-6 text-xl font-poppins font-semibold text-white">
                 Quick Links
@@ -30,8 +30,13 @@ const Footer = () => {
                   </a>
                 </li>
                 <li>
-                  <a href="/game" className="hover:underline">
-                    Game
+                  <a href="/games" className="hover:underline">
+                    Games
+                  </a>
+                </li>
+                <li className="pt-3">
+                  <a href="/creators" className="hover:underline">
+                    Creators
                   </a>
                 </li>
               </ul>
@@ -42,18 +47,12 @@ const Footer = () => {
               </h2>
               <ul className="text-gray-500 dark:text-gray-400 font-medium">
                 <li className="mb-4">
-                  <a
-                    href="https://github.com/themesberg/flowbite"
-                    className="hover:underline "
-                  >
+                  <a href="" className="hover:underline ">
                     Github
                   </a>
                 </li>
                 <li>
-                  <a
-                    href="https://discord.gg/4eeurUVvTy"
-                    className="hover:underline"
-                  >
+                  <a href="" className="hover:underline">
                     Discord
                   </a>
                 </li>
@@ -82,7 +81,7 @@ const Footer = () => {
         <div className="sm:flex sm:items-center sm:justify-between">
           <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
             © 2023{" "}
-            <a href="https://flowbite.com/" className="hover:underline">
+            <a href="/" className="hover:underline">
               GameZone
             </a>
             . All Rights Reserved.

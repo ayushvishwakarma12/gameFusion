@@ -1,7 +1,8 @@
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-import { sliderImages } from "../utils/images";
+import { sliderImages } from "../../utils/images";
+import styled from "styled-components";
 
 const ImageSlider = () => {
   const settings = {
@@ -9,7 +10,7 @@ const ImageSlider = () => {
     arrows: true,
     centerMode: true,
     infinite: true,
-    centerPadding: "60px",
+    centerPadding: "50px",
     slidesToShow: 3,
     slidesToScroll: 1,
     speed: 500,
@@ -25,8 +26,8 @@ const ImageSlider = () => {
       {
         breakpoint: 992,
         settings: {
-          slidesToShow: 2,
-          initialSlide: 2,
+          slidesToShow: 1,
+          initialSlide: 1,
         },
       },
       {
@@ -40,78 +41,90 @@ const ImageSlider = () => {
   };
 
   return (
-    <div className="bg-[#050415]">
-      <Slider {...settings} className="min-h-[400px] outline-0">
+    <ImageSliderWrapper>
+      <Slider {...settings} className="game-slider">
         {sliderImages.map((image, idx) => (
-          <div
-            className="border-[6px] border-white slider-item h-[400px] p-4 outline-0 img-fit-cover"
-            key={idx}
-          >
-            <img src={image} className="w-[200px]" />
+          <div className="slider-item" key={idx}>
+            <img src={image} className="slider-item-img " />
           </div>
         ))}
       </Slider>
-    </div>
+    </ImageSliderWrapper>
   );
 };
 
 export default ImageSlider;
 
-//   const ImageSliderWrapper = styled.div`
-//     background-color: #050415;
+const ImageSliderWrapper = styled.div`
+  background-color: #050415;
+  padding: 100px;
 
-//     .game-slider{
-//       .slider-item{
-//         height: 400px;
-//         padding: 16px;
-//         outline: 0;
+  .game-slider {
+    .slider-item {
+      height: 300px;
+      padding: 16px;
+      outline: 0;
+    };
+    @media screen and (max-width: 768px) {
+      .slider-item {
+        height:200px;
+      }
+    }
 
-//         img{
-//           border: 6px solid var(--clr-pink-normal);
-//         }
-//       }
+      img {
+        border: 6px solid #0584FC;
+        height: 280px;
+      }
+      @media screen and (max-width: 768px) {
+        img {
+          height: 200px;
+        }
+      }
+    }
 
-//       .slick-list{
-//         padding-top: 110px!important;
-//         padding-bottom: 110px!important;
-//       }
+    .slick-list {
+      padding-top: 110px !important;
+      padding-bottom: 110px !important;
+    }
 
-//       .slick-dots{
-//         li{
-//           height: 10px;
-//           width: 60px;
-//           button{
-//             &::before{
-//               width: 100%!important;
-//               height: 100%!important;
-//               border: 2px solid var(--clr-pink-normal);
-//               color: unset;
-//               transition: var(--transition-default);
-//             }
-//           }
+    .slick-dots {
+      li {
+        height: 10px;
+        width: 80px;
+        border-radius: 10px;
+        button {
+          &::before {
+            width: 100% !important;
+            height: 100% !important;
+            border: 2px solid blue;
+            color: unset;
+            transition: ease-in-out;
+            border-radius: 10px;
+          }
+        }
 
-//           &.slick-active{
-//             background-color: var(--clr-pink-normal);
-//           }
-//         }
-//       }
+        &.slick-active {
+          background-color: #0584FC //#BD46DA;
+        }
+      }
+    }
 
-//       .slick-center{
-//         transform: scale(1.5);
-//       }
+    .slick-center {
+      transform: scale(1.5);
+    }
 
-//       .slick-prev{
-//         position: absolute;
-//         left: 16px!important;
-//         z-index: 5;
-//         transform: scale(1.4);
-//       }
+    .slick-prev {
+      position: absolute;
+      left: -50px !important;
+      z-index: 5;
+      transform: scale(1.4);
+    }
 
-//       .slick-next{
-//         position: absolute;
-//         right: 16px!important;
-//         z-index: 5;
-//         transform: scale(1.4);
-//       }
-//     }
-//   `;
+    .slick-next {
+      position: absolute;
+      right: -50px !important;
+      z-index: 5;
+      transform: scale(1.4);
+    }
+  }
+`;

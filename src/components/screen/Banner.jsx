@@ -9,7 +9,6 @@ import banner4 from "../../assets/banner4.jpg";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Loading from "../Loader/Loader";
 
 const imageList = [banner, banner2, banner3, banner4];
 
@@ -27,7 +26,7 @@ const Banner = () => {
     easing: "linear",
   };
   return (
-    <>
+    <div className="w-full overflow-hidden">
       <Slider {...setting}>
         {imageList.map((eachImage) => {
           return (
@@ -69,7 +68,7 @@ const Banner = () => {
           );
         })}
       </Slider>
-    </>
+    </div>
   );
 };
 

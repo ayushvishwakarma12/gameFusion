@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { background } from "../../utils/images";
-import ImageSlider from "./ImageSliderr";
+import ImageSlider from "./ImageSlider";
 import { STATUS } from "../../utils/status";
 import Title from "../Common/Title";
 import { useDispatch, useSelector } from "react-redux";
@@ -106,22 +106,30 @@ export default function Home() {
   const joinTheCommunity = () => {
     return (
       <section
-        className="section sc-join d-flex align-items-center"
+        className="section sc-join d-flex align-items-center min-h-[500px]"
         style={{
-          background: `linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${join_image}) center/cover no-repeat`,
+          background: `linear-gradient(180deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(${join_image}) left top/cover no-repeat`,
         }}
       >
-        <div className="container w-100">
-          <div className="join-content text-white mx-auto text-center">
-            <h2 className="join-title mb-3">
-              JOIN THE <span>COMMUNITY</span>
+        <div className="w-100">
+          <div className="text-white mx-auto text-center">
+            <h2 className="font-poppins text-ll">
+              At {"     "}
+              <span className="pl-2 text-4xl font-semibold tracking-widest">
+                GameFusion
+              </span>
             </h2>
-            <p className="lead-text">
-              Join our Discord community which is in the making and made by
-              gamers for gamers. All are welcome to join no matter the game you
-              play, we&apos;re here to have a good.
+            <p className="text-lg mt-8 font-poppins leading-10">
+              We believe that gaming is not just a pastime; it's a lifestyle.
+              <br />
+              Join us on this thrilling journey, where every click brings you
+              closer to unparalleled gaming experiences. <br /> Let the fusion
+              of passion and play begin!
             </p>
-            <button type="button" className="section-btn mt-4">
+            <button
+              type="button"
+              className="bg-transparent mt-12 border-[2px] border-slate-700 w-[200px] p-5 text-white text-lg text-bold rounded-md cursor shadow-md transition ease-in-out delay-150 hover:translate-y-1 hover:scale-110 hover:bg-slate-700 duration-300"
+            >
               join discord
             </button>
           </div>
@@ -162,10 +170,11 @@ export default function Home() {
   return (
     <>
       <Banner />
+      <ImageSlider />
       {topPopularGame()}
       {joinStreaming()}
       {topGenre()}
-      <ImageSlider />
+
       {joinTheCommunity()}
     </>
   );

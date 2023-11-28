@@ -12,7 +12,6 @@ import {
 import { fetchAsynchGames } from "../../redux/slice/gameUtils2";
 import GameCard from "../GameCard/GameCard";
 import { STATUS } from "../../utils/status";
-import ImageSlider from "./ImageSliderr";
 import Tabs from "../Common/Tabs";
 import Title from "../Common/Title";
 

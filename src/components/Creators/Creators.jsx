@@ -39,21 +39,23 @@ const Creators = () => {
           <Loading />
         )}
       </div>
-      <div className="flex  justify-between">
-        <button
-          onClick={onClickPrevPage}
-          className="flex bg-transparent justify-center items-center text-slate-500 text-2xl cursor-pointer hover:text-white outline-none border-none"
-        >
-          <AiOutlineArrowLeft /> <span className="pl-2">Prev</span>
-        </button>
-        <button
-          onClick={onClickNextPage}
-          className="flex bg-transparent justify-center items-center text-slate-500 text-2xl cursor-pointer hover:text-white outline-none border-none"
-        >
-          <span className="pr-2">Next</span>
-          <AiOutlineArrowRight />
-        </button>
-      </div>
+      {creatorsStatus === STATUS.SUCCEEDED && (
+        <div className="flex  justify-between">
+          <button
+            onClick={onClickPrevPage}
+            className="flex bg-transparent justify-center items-center text-slate-500 text-2xl cursor-pointer hover:text-white outline-none border-none"
+          >
+            <AiOutlineArrowLeft /> <span className="pl-2">Prev</span>
+          </button>
+          <button
+            onClick={onClickNextPage}
+            className="flex bg-transparent justify-center items-center text-slate-500 text-2xl cursor-pointer hover:text-white outline-none border-none"
+          >
+            <span className="pr-2">Next</span>
+            <AiOutlineArrowRight />
+          </button>
+        </div>
+      )}
     </div>
   );
 };
