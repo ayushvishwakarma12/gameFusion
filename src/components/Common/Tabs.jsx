@@ -7,7 +7,6 @@ import GenreItem from "../Genre/GenreItem";
 const Tabs = ({ data }) => {
   const [activeTab, setActiveTab] = useState(data[0]); // using first genre as the default tab
   const [tabButtonStatus, setTabButtonStatus] = useState(false);
-  console.log(data);
 
   const tabClickHandler = (id) => {
     data.map((item) => {
@@ -31,10 +30,10 @@ const Tabs = ({ data }) => {
           >
             <button
               type="button"
-              className="tabs-buttons-close bg-white d-flex align-items-center justify-content-center"
+              className="tabs-buttons-close bg-white flex items-center justify-center"
               onClick={tabButtonsHandler}
             >
-              <AiOutlineMenu size={30} />
+              <AiOutlineMenu className="pr-3" size={30} />
             </button>
             {data.map((item) => {
               return (
@@ -96,15 +95,15 @@ const TabsWrapper = styled.div`
 
     .tabs-buttons-close {
       position: absolute;
-      right: -32px;
+      right: -30px;
       top: 0;
-      width: 32px;
-      height: 32px;
+      width: 50px;
+      height: 50px;
       display: none;
 
       &:hover {
-        background-color: var(--clr-pink-normal);
-        color: var(--clr-white);
+        background-color: white;
+        color: black;
       }
     }
 

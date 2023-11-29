@@ -4,7 +4,6 @@ import StartRating from "../Common/StarRating";
 
 export default function GameCard(props) {
   const { gameData } = props;
-  const { id, name, released, background_image, rating, genres } = gameData;
 
   return (
     <li className="p-5 hover:transition-all hover:duration-500 hover:ease-in-out hover:scale-105 cursor-pointer list-none">
@@ -12,7 +11,7 @@ export default function GameCard(props) {
         <div className="relative d-flex flex-col h-[280px] overflow-hidden">
           <img
             className="h-[280px] object-cover w-full brightness-90"
-            alt={name?.name}
+            alt={gameData?.name?.name}
             src={gameData?.background_image}
           />
           <StartRating rating={gameData?.rating} />

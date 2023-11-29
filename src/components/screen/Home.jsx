@@ -1,11 +1,13 @@
 import React, { useEffect } from "react";
-import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { background } from "../../utils/images";
+
+import styled from "styled-components";
+import { useDispatch, useSelector } from "react-redux";
+import Lottie from "react-lottie";
+
 import ImageSlider from "./ImageSlider";
 import { STATUS } from "../../utils/status";
 import Title from "../Common/Title";
-import { useDispatch, useSelector } from "react-redux";
 import GameList from "../GameCard/GameList";
 import { fetchAsynchGames } from "../../redux/slice/gameUtils2";
 import { join_image } from "../../utils/images";
@@ -13,8 +15,8 @@ import Tabs from "../Common/Tabs";
 import { fetchAsynchGenres } from "../../redux/slice/genreUtils";
 import Banner from "./Banner";
 import Loading from "../Loader/Loader";
-import Lottie from "react-lottie";
 import BannerAnimation from "../../lotties/banner.json";
+import { background } from "../../utils/images";
 
 export default function Home() {
   const dispatch = useDispatch();
@@ -77,7 +79,7 @@ export default function Home() {
         <div>
           <div className="flex justify-between">
             <div className="mt-5 pt-[100px]">
-              <h1 className="font-poppins text-6xl tracking-widest text-white">
+              <h1 className="font-poppins text-4xl lg:text-6xl tracking-widest text-white">
                 Join The Community
               </h1>
               <p className="font-mono text-lg font-semibold text-[#F2F3F5] mt-10 w-full text-left">
