@@ -26,7 +26,7 @@ const ImageSlider = () => {
       {
         breakpoint: 992,
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 2,
           initialSlide: 1,
         },
       },
@@ -35,13 +35,14 @@ const ImageSlider = () => {
         settings: {
           slidesToShow: 1,
           dots: false,
+          centerMode: false,
         },
       },
     ],
   };
 
   return (
-    <ImageSliderWrapper>
+    <ImageSliderWrapper className="p-[20px] md:p-[100px]">
       <Slider {...settings} className="game-slider">
         {sliderImages.map((image, idx) => (
           <div className="slider-item" key={idx}>
@@ -57,7 +58,7 @@ export default ImageSlider;
 
 const ImageSliderWrapper = styled.div`
   background-color: #050415;
-  padding: 100px;
+  
 
   .game-slider {
     .slider-item {

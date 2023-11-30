@@ -14,7 +14,7 @@ const Footer = () => {
                 Game
               </span>
               <span className="self-center text-xl md:text-4xl bg-gradient-to-r from-[#a4b7de] to-cyan-600 hover:bg-gradient-to-l delay-1000 trasition-all ease-in-out bg-clip-text text-transparent font-bold whitespace-nowrap dark:text-white">
-                Zone
+                Fusion
               </span>
             </Link>
           </div>
@@ -82,7 +82,7 @@ const Footer = () => {
           <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
             © 2023{" "}
             <a href="/" className="hover:underline">
-              GameZone
+              GameFusion
             </a>
             . All Rights Reserved.
           </span>

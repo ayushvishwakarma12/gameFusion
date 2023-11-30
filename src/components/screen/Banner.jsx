@@ -44,7 +44,7 @@ const Banner = () => {
                     <span className="text-[60px] md:text-[80px] text-cyan-200  ">
                       W
                     </span>
-                    elcome to GameZone
+                    elcome to GameFusion
                   </h1>
                   <p className="font-mono text-base md:text-lg font-semibold text-[#F2F3F5] mt-10 w-4/5 md:w-3/5 text-left">
                     - Your Gateway to Gaming Excellence! Dive into the immersive

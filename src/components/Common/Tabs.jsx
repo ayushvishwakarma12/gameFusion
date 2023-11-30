@@ -24,7 +24,7 @@ const Tabs = ({ data }) => {
       <div className="container">
         <div className="tabs-content">
           <ul
-            className={`tabs-buttons opacity-90 hover:opacity-100 absolute rounded-tr-2xl rounded-br-2xl top-0 left-0 z-40 shadow-2xl pt-16 pb-16 shadow-slate-800 ${
+            className={`tabs-buttons absolute rounded-tr-2xl rounded-br-2xl top-0 left-0 z-40 shadow-2xl pt-16 pb-16 shadow-slate-800 ${
               tabButtonStatus ? "show" : ""
             } bg-slate-800`}
           >
@@ -33,7 +33,7 @@ const Tabs = ({ data }) => {
               className="tabs-buttons-close bg-white flex items-center justify-center"
               onClick={tabButtonsHandler}
             >
-              <AiOutlineMenu className="pr-3" size={30} />
+              <AiOutlineMenu className="pr-5" size={30} />
             </button>
             {data.map((item) => {
               return (

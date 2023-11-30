@@ -22,7 +22,7 @@ const Navbar = () => {
             Game
           </span>
           <span className="text-xl md:text-4xl bg-gradient-to-r from-[#a4b7de] to-cyan-600 hover:bg-gradient-to-l delay-1000 trasition-all ease-in-out bg-clip-text text-transparent font-bold whitespace-nowrap dark:text-white">
-            Zone
+            Fusion
           </span>
         </Link>
       </div>

@@ -30,7 +30,7 @@ const Creators = () => {
     dispatch(fetchAsyncCreators(currentPage));
   }, [currentPage]);
   return (
-    <div className="min-h-screen bg-slate-950 p-10 flex flex-col items-center">
+    <div className="min-h-screen bg-slate-950 p-5 md:p-10 flex flex-col items-center">
       <Title titleName={{ firstText: "OUR", secondText: "CREATORS" }} />
       <div>
         {creatorsStatus === STATUS.SUCCEEDED ? (

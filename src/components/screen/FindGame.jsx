@@ -45,7 +45,7 @@ export default function FindGame() {
 
   return (
     <>
-      <div className="p-5 bg-slate-950 min-h-screen flex flex-col">
+      <div className="p-2 md:p-5 bg-slate-950 min-h-screen flex flex-col">
         <Title titleName={{ firstText: "ALL", secondText: "GAMES" }} />
         <div className="min-h-[80vh] min-w-min flex justify-center items-center">
           {gameStatus === STATUS.SUCCEEDED ? (
@@ -58,18 +58,18 @@ export default function FindGame() {
             <Loader />
           )}
         </div>
-        <div className="flex justify-between self-center pt-10 pb-10 w-[400px]">
+        <div className="flex justify-between self-center p-5 pt-10 pb-10 w-full md:w-[400px]">
           <button
             onClick={onClickPreviousPage}
             type="button"
-            className="text-white w-40 bg-gradient-to-r from-slate-600 via-slate-800 to-slate-900 hover:bg-gradient-to-br focus:ring-1 focus:outline-none focus:ring-slate-300 shadow-lg shadow-slate-500/50 dark:shadow-lg font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
+            className="text-white w-32 md:w-40 bg-gradient-to-r from-slate-600 via-slate-800 to-slate-900 hover:bg-gradient-to-br focus:ring-1 focus:outline-none focus:ring-slate-300 shadow-lg shadow-slate-500/50 dark:shadow-lg font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
           >
             previous
           </button>
           <button
             onClick={onClickNextPage}
             type="button"
-            className="text-white w-40 bg-gradient-to-r from-slate-600 via-slate-800 to-slate-900 hover:bg-gradient-to-br focus:ring-1 focus:outline-none focus:ring-slate-300 shadow-lg shadow-slate-500/50 dark:shadow-lg font-medium rounded-lg text-sm px-5 py-2.5 text-center mb-2"
+            className="text-white w-32 md:w-40 bg-gradient-to-r from-slate-600 via-slate-800 to-slate-900 hover:bg-gradient-to-br focus:ring-1 focus:outline-none focus:ring-slate-300 shadow-lg shadow-slate-500/50 dark:shadow-lg font-medium rounded-lg text-sm px-5 py-2.5 text-center mb-2"
           >
             next
           </button>
