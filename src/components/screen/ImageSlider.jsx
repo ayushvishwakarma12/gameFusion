@@ -36,13 +36,14 @@ const ImageSlider = () => {
           slidesToShow: 1,
           dots: false,
           centerMode: false,
+          arrows: false,
         },
       },
     ],
   };
 
   return (
-    <ImageSliderWrapper className="p-[20px] md:p-[100px]">
+    <ImageSliderWrapper className="md:p-[100px]">
       <Slider {...settings} className="game-slider">
         {sliderImages.map((image, idx) => (
           <div className="slider-item" key={idx}>

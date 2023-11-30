@@ -26,8 +26,6 @@ export default function GameDetails(props) {
     platforms,
     tags,
   } = gameDetails;
-  console.log(gameDetails);
-  console.log(background_image_additional);
 
   const selectedClass = { color: "green" };
 
@@ -129,10 +127,10 @@ export default function GameDetails(props) {
           </div> */}
           <Tabs>
             <TabList className="mb-[50px]">
-              <Tab className="inline-block w-[150px] mr-5 bg-white hover:bg-purple-600 duration-500 hover:text-white text-lg pr-5 pl-5 pt-2 pb-2 font-bold font-poppins cursor-pointer">
+              <Tab className="inline-block w-[150px] mr-5 bg-white text-black hover:bg-purple-600 duration-500 hover:text-white text-lg pr-5 pl-5 pt-2 pb-2 font-bold font-poppins cursor-pointer">
                 Platform
               </Tab>
-              <Tab className="inline-block w-[150px] mr-5 bg-white hover:bg-purple-600 duration-500 hover:text-white text-lg pr-5 pl-5 pt-2 pb-2 font-bold font-poppins cursor-pointer">
+              <Tab className="inline-block w-[150px] mr-5 bg-white text-black hover:bg-purple-600 duration-500 hover:text-white text-lg pr-5 pl-5 pt-2 pb-2 font-bold font-poppins cursor-pointer">
                 Stores
               </Tab>
             </TabList>

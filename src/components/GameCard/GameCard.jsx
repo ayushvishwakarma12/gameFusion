@@ -6,11 +6,11 @@ export default function GameCard(props) {
   const { gameData } = props;
 
   return (
-    <li className="p-5 hover:transition-all hover:duration-500 hover:ease-in-out hover:scale-105 cursor-pointer list-none">
+    <li className="p-2 hover:transition-all hover:duration-500 hover:ease-in-out hover:scale-105 cursor-pointer list-none">
       <Link to={`/game/${gameData?.id}`} className="text-inherit">
-        <div className="relative d-flex flex-col h-[280px] overflow-hidden">
+        <div className="relative d-flex flex-col h-[250px] overflow-hidden">
           <img
-            className="h-[280px] object-cover w-full brightness-90"
+            className="h-[250px] object-cover w-full brightness-90"
             alt={gameData?.name?.name}
             src={gameData?.background_image}
           />
